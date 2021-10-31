@@ -14,18 +14,20 @@ import * as S from "./Map.styles";
 import { dummyProperties } from "../../vars/Properties";
 
 const Map = () => {
-  // eslint-disable-next-line
-  const [center, setCenter] = useState({ lat: 43.641382, lng: -79.431819 });
-  // eslint-disable-next-line
-  const [zoom, setZoom] = useState(11);
+  // const {allProperties, isLoading, isError} = useGetAllProperties()
 
-  const { REACT_APP_API_KEY } = process.env;
+  // eslint-disable-next-line
+  const [center, setCenter] = useState({ lat: 43.6476, lng: -79.39076 });
+  // eslint-disable-next-line
+  const [zoom, setZoom] = useState(14);
+
+  const protectMeAtAllCosts = process.env.REACT_APP_GOOGLE_API_KEY;
 
   return (
     <>
       <S.MapContainer>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: REACT_APP_API_KEY }}
+          bootstrapURLKeys={{ key: protectMeAtAllCosts }}
           defaultCenter={center}
           defaultZoom={zoom}
         >
@@ -33,8 +35,8 @@ const Map = () => {
             color="red"
             city="Toronto"
             country="Canada"
-            lat={43.6476}
-            lng={-79.39076}
+            lat={center.lat}
+            lng={center.lng}
             leaseTermMonths="12"
             monthlyRate="2000"
             name="My Condo"
