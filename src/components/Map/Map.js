@@ -18,45 +18,37 @@ const Map = () => {
   const [center, setCenter] = useState({ lat: 43.641382, lng: -79.431819 });
   // eslint-disable-next-line
   const [zoom, setZoom] = useState(11);
+
   const { REACT_APP_API_KEY } = process.env;
 
-  const getMapOptions = (maps: any) => {
-    return {
-      disableDefaultUI: true,
-      mapTypeControl: true,
-      streetViewControl: true,
-      styles: [
-        {
-          featureType: "poi",
-          elementType: "labels",
-          stylers: [{ visibility: "on" }],
-        },
-      ],
-    };
-  };
-
   return (
-    <S.MapContainer>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: REACT_APP_API_KEY }}
-        defaultCenter={center}
-        defaultZoom={zoom}
-        options={getMapOptions}
-      >
-        <Marker lat={43.650132} lng={-79.379328} color="pink" name="Home" />
-        {dummyProperties.map((property, index) => {
-          return (
-            <Marker
-              key={index}
-              lat={property.latitude}
-              lng={property.longitude}
-              color="pink"
-              name={property.property}
-            />
-          );
-        })}
-      </GoogleMapReact>{" "}
-    </S.MapContainer>
+    <>
+      <S.MapContainer>
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: REACT_APP_API_KEY }}
+          defaultCenter={center}
+          defaultZoom={zoom}
+        >
+          <Marker lat={43.650132} lng={-79.379328} color="pink" name="Home" />
+          {dummyProperties.map((property, index) => {
+            return (
+              <Marker
+                key={index}
+                color="pink"
+                city={property.city}
+                country={property.country}
+                lat={property.latitude}
+                lng={property.longitude}
+                leaseTermMonths={property.lease_term_months}
+                monthlyRate={property.monthly_rate}
+                name={property.property}
+                totalViews={property.total_views}
+              />
+            );
+          })}
+        </GoogleMapReact>
+      </S.MapContainer>
+    </>
   );
 };
 

@@ -2,6 +2,6 @@ import styled from "styled-components";
 
 export const MapContainer = styled.div`
   display: flex;
-  width: 100%;
+  width: 85%;
   height: 100vh;
 `;
