@@ -25,15 +25,8 @@ export default function Example() {
   return (
     <div className="h-screen w-2/6 flex-1 flex flex-col min-h-0 bg-gray-800">
       <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-        <div className="flex items-center flex-shrink-0 px-4">
-          <img
-            className="h-8 w-auto"
-            src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-            alt="Workflow"
-          />
-        </div>
         <nav
-          className="mt-5 flex-1 px-2 bg-gray-800 space-y-1"
+          className="mt-1 flex-1 px-2 bg-gray-800 space-y-1"
           aria-label="Sidebar"
         >
           {navigation.map((item) => (

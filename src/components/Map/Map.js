@@ -29,7 +29,17 @@ const Map = () => {
           defaultCenter={center}
           defaultZoom={zoom}
         >
-          <Marker lat={43.650132} lng={-79.379328} color="pink" name="Home" />
+          <Marker
+            color="red"
+            city="Toronto"
+            country="Canada"
+            lat={43.6476}
+            lng={-79.39076}
+            leaseTermMonths="12"
+            monthlyRate="2000"
+            name="My Condo"
+            totalViews="1"
+          />
           {dummyProperties.map((property, index) => {
             return (
               <Marker

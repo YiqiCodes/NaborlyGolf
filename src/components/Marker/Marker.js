@@ -54,14 +54,14 @@ const Marker = ({
         onCancel={handleCancel}
       >
         <S.ModalContainer>
-          <div>{city}</div>
-          <div>{country}</div>
-          <div>{lat}</div>
-          <div>{lng}</div>
-          <div>{leaseTermMonths}</div>
-          <div>{monthlyRate}</div>
-          <div>{name}</div>
-          <div>{totalViews}</div>
+          <div>Property Name: {name}</div>
+          <div>City: {city}</div>
+          <div>Country: {country}</div>
+          <div>Lease Term: {leaseTermMonths}</div>
+          <div>Monthly Rate: {monthlyRate}</div>
+          <div>Latitude: {lat}</div>
+          <div>Longitude: {lng}</div>
+          <div>Total Views: {totalViews}</div>
         </S.ModalContainer>
       </Modal>
     </>
