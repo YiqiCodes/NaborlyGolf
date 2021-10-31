@@ -19,4 +19,14 @@ export const dummyProperties = [
     lease_term_months: 12,
     total_views: 11447,
   },
+  {
+    property: "Sample Property 3",
+    latitude: 43.64667,
+    longitude: -79.40717,
+    city: "Toronto",
+    country: "Canada",
+    monthly_rate: 1100,
+    lease_term_months: 12,
+    total_views: 8261,
+  },
 ];

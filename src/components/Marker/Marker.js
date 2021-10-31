@@ -8,6 +8,7 @@ const Marker = (props: any) => {
   return (
     <div>
       <div
+        key={id}
         className="pin bounce"
         style={{ backgroundColor: color, cursor: "pointer" }}
         title={name}
