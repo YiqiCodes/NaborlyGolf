@@ -3,14 +3,20 @@ import {
   CalendarIcon,
   ChartBarIcon,
   FolderIcon,
-  HomeIcon,
+  MapIcon,
   InboxIcon,
-  UsersIcon,
+  FireIcon,
 } from "@heroicons/react/outline";
 
 const navigation = [
-  { name: "Dashboard", icon: HomeIcon, href: "#", current: true },
-  { name: "Team", icon: UsersIcon, href: "#", count: 3, current: false },
+  { name: "Map", icon: MapIcon, href: "/", current: true },
+  {
+    name: "Heatmap",
+    icon: FireIcon,
+    href: "/heatmap",
+    count: 3,
+    current: false,
+  },
   { name: "Projects", icon: FolderIcon, href: "#", count: 4, current: false },
   { name: "Calendar", icon: CalendarIcon, href: "#", current: false },
   { name: "Documents", icon: InboxIcon, href: "#", current: false },
