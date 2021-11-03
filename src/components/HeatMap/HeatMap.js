@@ -11,6 +11,7 @@ import Marker from "../Marker/Marker";
 import * as S from "./Map.styles";
 
 // Vars
+// eslint-disable-next-line
 import { dummyProperties } from "../../vars/Properties";
 
 const HeatMap = () => {
