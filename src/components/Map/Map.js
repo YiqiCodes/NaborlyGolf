@@ -21,6 +21,21 @@ const Map = () => {
   // eslint-disable-next-line
   const [zoom, setZoom] = useState(14);
 
+  const getMapOptions = (maps: any) => {
+    return {
+      disableDefaultUI: true,
+      mapTypeControl: true,
+      streetViewControl: true,
+      styles: [
+        {
+          featureType: "poi",
+          elementType: "labels",
+          stylers: [{ visibility: "on" }],
+        },
+      ],
+    };
+  };
+
   const protectMeAtAllCosts = process.env.REACT_APP_GOOGLE_API_KEY;
 
   return (
@@ -30,6 +45,7 @@ const Map = () => {
           bootstrapURLKeys={{ key: protectMeAtAllCosts }}
           defaultCenter={center}
           defaultZoom={zoom}
+          options={getMapOptions}
         >
           <Marker
             color="red"
