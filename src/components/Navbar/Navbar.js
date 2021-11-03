@@ -1,4 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
+import profilepicture from "../../assets/profilepicture.png";
 import {
   CalendarIcon,
   ChartBarIcon,
@@ -46,6 +47,7 @@ export default function Example() {
                 "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
               )}
             >
+              {console.log("item", item)}
               <item.icon
                 className={classNames(
                   item.current
@@ -74,19 +76,21 @@ export default function Example() {
       </div>
       <div className="flex-shrink-0 flex bg-gray-700 p-4">
         <a
-          href="https://www.naborly.com/"
+          href="https://www.linkedin.com/in/zhangyiqi/"
+          target="_blank"
+          rel="noreferrer"
           className="flex-shrink-0 w-full group block"
         >
-          <div className="flex items-center">
+          <div className="flex items-start ml-3">
             <div>
               <img
-                className="inline-block h-9 w-9 rounded-full"
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                className="inline-block h-12 w-12 rounded-full"
+                src={profilepicture}
                 alt=""
               />
             </div>
-            <div className="ml-3">
-              <p className="text-sm font-medium text-white">Tom Cook</p>
+            <div className="ml-5 mt-1">
+              <p className="text-sm font-medium text-white mb-2">Yiqi Zhang</p>
               <p className="text-xs font-medium text-gray-300 group-hover:text-gray-200">
                 View profile
               </p>
