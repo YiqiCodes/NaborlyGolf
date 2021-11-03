@@ -9,19 +9,19 @@ import {
   FireIcon,
 } from "@heroicons/react/outline";
 
-const navigation = [
-  { name: "Map", icon: MapIcon, href: "/", current: true },
+let navigation = [
+  { name: "Map", icon: MapIcon, count: 10, href: "/", current: true },
   {
     name: "Heatmap",
     icon: FireIcon,
     href: "/heatmap",
-    count: 3,
+    count: 10,
     current: false,
   },
-  { name: "Projects", icon: FolderIcon, href: "#", count: 4, current: false },
-  { name: "Calendar", icon: CalendarIcon, href: "#", current: false },
-  { name: "Documents", icon: InboxIcon, href: "#", current: false },
-  { name: "Reports", icon: ChartBarIcon, href: "#", count: 12, current: false },
+  { name: "More", icon: FolderIcon, href: "#", current: false },
+  { name: "Features", icon: CalendarIcon, href: "#", current: false },
+  { name: "Coming", icon: InboxIcon, href: "#", current: false },
+  { name: "Soon!", icon: ChartBarIcon, href: "#", current: false },
 ];
 
 function classNames(...classes) {
@@ -47,7 +47,6 @@ export default function Example() {
                 "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
               )}
             >
-              {console.log("item", item)}
               <item.icon
                 className={classNames(
                   item.current
