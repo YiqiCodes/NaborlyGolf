@@ -12,7 +12,7 @@ import * as S from "./Map.styles";
 
 // Vars
 // eslint-disable-next-line
-import { dummyProperties } from "../../vars/Properties";
+import { dummyGolfCourses } from "../../vars/GolfCourses";
 
 const HeatMap = () => {
   // const {allProperties, isLoading, isError} = useGetAllProperties()

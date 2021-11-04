@@ -16,10 +16,11 @@ const Marker = ({
   country,
   lat,
   lng,
-  leaseTermMonths,
-  monthlyRate,
-  name,
-  totalViews,
+  holes,
+  property,
+  hasRange,
+  isPublic,
+  rating,
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -27,19 +28,14 @@ const Marker = ({
     setOpen(true);
   };
 
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
-
   return (
     <>
       <div>
         <div
-          key={name}
+          key={property}
           className="pin bounce"
           style={{ backgroundColor: color, cursor: "pointer" }}
-          title={name}
+          title={property}
           onClick={showModal}
         />
         <div className="pulse" />
@@ -89,17 +85,18 @@ const Marker = ({
                       as="h3"
                       className="text-lg leading-6 font-medium text-gray-900"
                     >
-                      {name}
+                      {property}
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">
                         <div>City: {city}</div>
                         <div>Country: {country}</div>
-                        <div>Lease Term: {leaseTermMonths}</div>
-                        <div>Monthly Rate: {formatter.format(monthlyRate)}</div>
                         <div>Latitude: {lat}</div>
                         <div>Longitude: {lng}</div>
-                        <div>Total Views: {totalViews}</div>
+                        <div>Holes: {holes}</div>
+                        <div>Public: {isPublic ? "Yes" : "No"}</div>
+                        <div>Range: {hasRange ? "Yes" : "No"}</div>
+                        <div>Rating: {rating}</div>
                       </p>
                     </div>
                   </div>

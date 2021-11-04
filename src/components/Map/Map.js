@@ -11,15 +11,15 @@ import Marker from "../Marker/Marker";
 import * as S from "./Map.styles";
 
 // Vars
-import { dummyProperties } from "../../vars/Properties";
+import { dummyGolfCourses } from "../../vars/GolfCourses";
 
 const Map = () => {
   // const {allProperties, isLoading, isError} = useGetAllProperties()
 
   // eslint-disable-next-line
-  const [center, setCenter] = useState({ lat: 43.6476, lng: -79.39076 });
+  const [center, setCenter] = useState({ lat: 43.941676, lng: -79.465868 });
   // eslint-disable-next-line
-  const [zoom, setZoom] = useState(14);
+  const [zoom, setZoom] = useState(11);
 
   const getMapOptions = (maps: any) => {
     return {
@@ -53,24 +53,22 @@ const Map = () => {
             country="Canada"
             lat={center.lat}
             lng={center.lng}
-            leaseTermMonths="12"
-            monthlyRate="2000"
-            name="My Condo"
-            totalViews="1"
+            name="My Home"
           />
-          {dummyProperties.map((property, index) => {
+          {dummyGolfCourses.map((golfCourse, index) => {
             return (
               <Marker
                 key={index}
                 color="pink"
-                city={property.city}
-                country={property.country}
-                lat={property.latitude}
-                lng={property.longitude}
-                leaseTermMonths={property.lease_term_months}
-                monthlyRate={property.monthly_rate}
-                name={property.property}
-                totalViews={property.total_views}
+                city={golfCourse.city}
+                country={golfCourse.country}
+                lat={golfCourse.latitude}
+                lng={golfCourse.longitude}
+                hasRange={golfCourse.range}
+                holes={golfCourse.holes}
+                isPublic={golfCourse.public}
+                property={golfCourse.property}
+                rating={golfCourse.rating}
               />
             );
           })}
