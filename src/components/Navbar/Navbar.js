@@ -1,15 +1,13 @@
 /* This example requires Tailwind CSS v2.0+ */
 import profilepicture from "../../assets/profilepicture.png";
 import {
-  CalendarIcon,
-  ChartBarIcon,
-  FolderIcon,
+  VideoCameraIcon,
+  GiftIcon,
   InboxIcon,
   FlagIcon,
 } from "@heroicons/react/outline";
 
 let navigation = [
-  { name: "Products", icon: FolderIcon, count: 12, href: "/", current: false },
   {
     name: "Courses",
     icon: FlagIcon,
@@ -17,9 +15,15 @@ let navigation = [
     href: "/map",
     current: true,
   },
-  { name: "Videos", icon: CalendarIcon, href: "/videos", current: false },
-  { name: "Coming", icon: InboxIcon, href: "#", current: false },
-  { name: "Soon!", icon: ChartBarIcon, href: "#", current: false },
+  { name: "Products", icon: GiftIcon, count: 12, href: "/", current: false },
+  {
+    name: "Videos",
+    icon: VideoCameraIcon,
+    count: 3,
+    href: "/videos",
+    current: false,
+  },
+  { name: "What's next?", icon: InboxIcon, href: "#", current: false },
 ];
 
 function classNames(...classes) {
