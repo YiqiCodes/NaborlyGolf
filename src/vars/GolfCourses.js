@@ -22,14 +22,14 @@ export const dummyGolfCourses = [
     range: false,
   },
   {
-    property: "Summit Golf & Country Club",
-    latitude: 43.9181,
-    longitude: -79.446,
+    property: "Eagles Nest Golf Club",
+    latitude: 43.8643258,
+    longitude: -79.4935197,
     city: "Toronto",
     country: "Canada",
     holes: 18,
     public: false,
-    range: false,
+    range: true,
     rating: 4.6,
   },
   {
@@ -44,7 +44,7 @@ export const dummyGolfCourses = [
     rating: 4.6,
   },
   {
-    property: "DiamondBank Golf Club",
+    property: "DiamondBack Golf Club",
     latitude: 43.9609165,
     longitude: -79.4147022,
     city: "Toronto",

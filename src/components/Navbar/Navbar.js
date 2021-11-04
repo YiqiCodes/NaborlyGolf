@@ -4,20 +4,12 @@ import {
   CalendarIcon,
   ChartBarIcon,
   FolderIcon,
-  MapIcon,
   InboxIcon,
-  FireIcon,
+  FlagIcon,
 } from "@heroicons/react/outline";
 
 let navigation = [
-  { name: "Map", icon: MapIcon, count: 10, href: "/", current: true },
-  {
-    name: "Heatmap",
-    icon: FireIcon,
-    href: "/heatmap",
-    count: 10,
-    current: false,
-  },
+  { name: "Courses", icon: FlagIcon, count: 5, href: "/", current: true },
   { name: "More", icon: FolderIcon, href: "#", current: false },
   { name: "Features", icon: CalendarIcon, href: "#", current: false },
   { name: "Coming", icon: InboxIcon, href: "#", current: false },
