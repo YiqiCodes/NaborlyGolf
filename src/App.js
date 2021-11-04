@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar/Navbar";
 
 // Pages
 import MainMap from "./pages/MainMap";
+import Products from "./pages/Products";
+import Videos from "./pages/Videos";
 
 // Styles
 import "./App.css";
@@ -13,9 +15,15 @@ import * as S from "./App.styles";
 function App() {
   return (
     <S.AppContainer>
-      <Route exact path="/" name="Map">
-        <Navbar />
+      <Navbar />
+      <Route exact path="/" name="Products">
+        <Products />
+      </Route>
+      <Route exact path="/map" name="Map">
         <MainMap />
+      </Route>
+      <Route exact path="/videos" name="Video">
+        <Videos />
       </Route>
     </S.AppContainer>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 // Antd
 import { Switch } from "antd";
@@ -22,8 +22,6 @@ const Map = () => {
   // eslint-disable-next-line
   const [zoom, setZoom] = useState(11);
   const [showHeatMap, setShowHeatMap] = useState(false);
-
-  useEffect(() => {}, [showHeatMap]);
 
   const onChange = () => {
     setShowHeatMap((prev) => !prev);

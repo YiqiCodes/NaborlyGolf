@@ -9,9 +9,15 @@ import {
 } from "@heroicons/react/outline";
 
 let navigation = [
-  { name: "Courses", icon: FlagIcon, count: 5, href: "/", current: true },
-  { name: "More", icon: FolderIcon, href: "#", current: false },
-  { name: "Features", icon: CalendarIcon, href: "#", current: false },
+  { name: "Products", icon: FolderIcon, count: 12, href: "/", current: false },
+  {
+    name: "Courses",
+    icon: FlagIcon,
+    count: 5,
+    href: "/map",
+    current: true,
+  },
+  { name: "Videos", icon: CalendarIcon, href: "/videos", current: false },
   { name: "Coming", icon: InboxIcon, href: "#", current: false },
   { name: "Soon!", icon: ChartBarIcon, href: "#", current: false },
 ];
@@ -20,9 +26,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function Navbar() {
   return (
-    <div className="hidden sm:block h-screen w-2/6 flex-1 flex flex-col min-h-0 bg-gray-800">
+    <div className="hidden lg:flex xl:flex 2xl:flex flex-col w-1/6 min-h-0 bg-gray-800">
       <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
         <nav
           className="mt-1 flex-1 px-2 bg-gray-800 space-y-1"
