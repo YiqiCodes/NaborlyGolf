@@ -1,17 +1,18 @@
-import React, { useState } from "react";
-import GoogleMapReact from "google-map-react";
+import React, { useEffect, useState } from "react";
+
+// Antd
+import { Switch } from "antd";
 
 // Components
-import Marker from "../Marker/Marker";
+import HeatMap from "./HeatMap";
+import DefaultMap from "./DefaultMap";
 
 // Hooks
 // import useGetAllProperties from "../../hooks/UseGetAllProperties";
 
 // Styles
 import * as S from "./Map.styles";
-
-// Vars
-import { dummyGolfCourses } from "../../vars/GolfCourses";
+import "antd/dist/antd.css";
 
 const Map = () => {
   // const {allProperties, isLoading, isError} = useGetAllProperties()
@@ -20,59 +21,25 @@ const Map = () => {
   const [center, setCenter] = useState({ lat: 43.941676, lng: -79.465868 });
   // eslint-disable-next-line
   const [zoom, setZoom] = useState(11);
+  const [showHeatMap, setShowHeatMap] = useState(false);
 
-  const getMapOptions = (maps: any) => {
-    return {
-      disableDefaultUI: true,
-      mapTypeControl: true,
-      streetViewControl: true,
-      styles: [
-        {
-          featureType: "poi",
-          elementType: "labels",
-          stylers: [{ visibility: "on" }],
-        },
-      ],
-    };
+  useEffect(() => {}, [showHeatMap]);
+
+  const onChange = () => {
+    setShowHeatMap((prev) => !prev);
   };
-
-  const protectMeAtAllCosts = process.env.REACT_APP_GOOGLE_API_KEY;
 
   return (
     <>
       <S.MapContainer>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: protectMeAtAllCosts }}
-          defaultCenter={center}
-          defaultZoom={zoom}
-          options={getMapOptions}
-        >
-          <Marker
-            color="red"
-            city="Toronto"
-            country="Canada"
-            lat={center.lat}
-            lng={center.lng}
-            name="My Home"
-          />
-          {dummyGolfCourses.map((golfCourse, index) => {
-            return (
-              <Marker
-                key={index}
-                color="pink"
-                city={golfCourse.city}
-                country={golfCourse.country}
-                lat={golfCourse.latitude}
-                lng={golfCourse.longitude}
-                hasRange={golfCourse.range}
-                holes={golfCourse.holes}
-                isPublic={golfCourse.public}
-                property={golfCourse.property}
-                rating={golfCourse.rating}
-              />
-            );
-          })}
-        </GoogleMapReact>
+        <S.ToggleContainer>
+          <Switch onChange={onChange} />
+        </S.ToggleContainer>
+        {showHeatMap ? (
+          <HeatMap center={center} zoom={zoom} />
+        ) : (
+          <DefaultMap center={center} zoom={zoom} />
+        )}
       </S.MapContainer>
     </>
   );

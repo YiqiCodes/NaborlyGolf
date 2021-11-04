@@ -1,11 +1,10 @@
+import { Route } from "react-router-dom";
+
 // Components
 import Navbar from "./components/Navbar/Navbar";
 
 // Pages
 import MainMap from "./pages/MainMap";
-import MainHeatMap from "./pages/MainHeatMap";
-
-import { Route } from "react-router-dom";
 
 // Styles
 import "./App.css";
@@ -17,10 +16,6 @@ function App() {
       <Route exact path="/" name="Map">
         <Navbar />
         <MainMap />
-      </Route>
-      <Route exact path="/heatmap" name="HeatMap">
-        <Navbar />
-        <MainHeatMap />
       </Route>
     </S.AppContainer>
   );

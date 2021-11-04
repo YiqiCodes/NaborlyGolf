@@ -8,3 +8,10 @@ export const MapContainer = styled.div`
     width: 100%;
   }
 `;
+
+export const ToggleContainer = styled.div`
+  position: absolute;
+  right: 0;
+  margin: 1rem;
+  z-index: 1;
+`;
