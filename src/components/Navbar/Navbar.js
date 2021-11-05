@@ -1,104 +1,108 @@
-/* This example requires Tailwind CSS v2.0+ */
-import profilepicture from "../../assets/profilepicture.png";
+import React from "react";
+import { Route, Link } from "react-router-dom";
+
+// Assets
 import {
   VideoCameraIcon,
   GiftIcon,
   InboxIcon,
   FlagIcon,
 } from "@heroicons/react/outline";
+import profilepicture from "../../assets/profilepicture.png";
 
-let navigation = [
-  {
-    name: "Courses",
-    icon: FlagIcon,
-    count: 5,
-    href: "/map",
-    current: true,
-  },
-  { name: "Products", icon: GiftIcon, count: 12, href: "/", current: false },
-  {
-    name: "Videos",
-    icon: VideoCameraIcon,
-    count: 3,
-    href: "/videos",
-    current: false,
-  },
-  { name: "What's next?", icon: InboxIcon, href: "#", current: false },
-];
+// Components
+import { Layout, Menu } from "antd";
+import Products from "../../pages/Products";
+import MainMap from "../../pages/MainMap";
+import Videos from "../../pages/Videos";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+// Styles
+import * as S from "./Navbar.styles";
+import "../../index.css";
+import "antd/dist/antd.css";
 
-export default function Navbar() {
+const { Header, Content, Sider } = Layout;
+
+const Navbar = () => {
   return (
-    <div className="hidden lg:flex xl:flex 2xl:flex flex-col w-1/6 min-h-0 bg-gray-800">
-      <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-        <nav
-          className="mt-1 flex-1 px-2 bg-gray-800 space-y-1"
-          aria-label="Sidebar"
-        >
-          {navigation.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className={classNames(
-                item.current
-                  ? "bg-gray-900 text-white"
-                  : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-              )}
-            >
-              <item.icon
-                className={classNames(
-                  item.current
-                    ? "text-gray-300"
-                    : "text-gray-400 group-hover:text-gray-300",
-                  "mr-3 flex-shrink-0 h-6 w-6"
-                )}
-                aria-hidden="true"
-              />
-              <span className="flex-1">{item.name}</span>
-              {item.count ? (
-                <span
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-800"
-                      : "bg-gray-900 group-hover:bg-gray-800",
-                    "ml-3 inline-block py-0.5 px-3 text-xs font-medium rounded-full"
-                  )}
-                >
-                  {item.count}
-                </span>
-              ) : null}
-            </a>
-          ))}
-        </nav>
-      </div>
-      <div className="flex-shrink-0 flex bg-gray-700 p-4">
-        <a
-          href="https://www.linkedin.com/in/zhangyiqi/"
-          target="_blank"
-          rel="noreferrer"
-          className="flex-shrink-0 w-full group block"
-        >
-          <div className="flex items-start ml-3">
-            <div>
-              <img
-                className="inline-block h-12 w-12 rounded-full"
-                src={profilepicture}
-                alt=""
-              />
+    <Layout>
+      <Sider
+        breakpoint="lg"
+        collapsedWidth="0"
+        onBreakpoint={(broken) => {
+          console.log(broken);
+        }}
+        onCollapse={(collapsed, type) => {
+          console.log(collapsed, type);
+        }}
+      >
+        <div className="logo" />
+        <S.MenuContainer>
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={["2"]}>
+            <Menu.Item key="1" icon={<GiftIcon />}>
+              Home
+              <Link to="/" />
+            </Menu.Item>
+            <Menu.Item key="2" icon={<FlagIcon />}>
+              Courses
+              <Link to="/map" />
+            </Menu.Item>
+            <Menu.Item key="3" icon={<VideoCameraIcon />}>
+              Videos
+              <Link to="/videos" />
+            </Menu.Item>
+            <Menu.Item key="4" icon={<InboxIcon />}>
+              More Soon
+            </Menu.Item>
+          </Menu>
+        </S.MenuContainer>
+        <div className="w-full bottom-0 absolute flex-shrink-0 flex bg-gray-700 p-4">
+          <a
+            href="https://www.linkedin.com/in/zhangyiqi/"
+            target="_blank"
+            rel="noreferrer"
+            className="flex-shrink-0 w-full group block"
+          >
+            <div className="flex items-start ml-3">
+              <div>
+                <img
+                  className="inline-block h-12 w-12 rounded-full"
+                  src={profilepicture}
+                  alt=""
+                />
+              </div>
+              <div className="ml-5 mt-1">
+                <p className="text-sm font-medium text-white mb-2">
+                  Yiqi Zhang
+                </p>
+                <p className="text-xs font-medium text-gray-300 group-hover:text-gray-200">
+                  View profile
+                </p>
+              </div>
             </div>
-            <div className="ml-5 mt-1">
-              <p className="text-sm font-medium text-white mb-2">Yiqi Zhang</p>
-              <p className="text-xs font-medium text-gray-300 group-hover:text-gray-200">
-                View profile
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
+          </a>
+        </div>
+      </Sider>
+      <Layout>
+        <Header
+          className="site-layout-sub-header-background"
+          style={{ padding: 0 }}
+        />
+        <Content
+          style={{
+            margin: "24px 16px",
+            padding: 24,
+            background: "#fff",
+            minHeight: 280,
+          }}
+        >
+          <Route exact path="/" component={Products} />
+          <Route path="/map" component={MainMap} />
+          <Route path="/videos" component={Videos} />
+        </Content>
+      </Layout>
+    </Layout>
   );
-}
+};
+
+export default Navbar;
