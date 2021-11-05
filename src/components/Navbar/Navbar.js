@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Assets
 import {
@@ -12,17 +12,12 @@ import profilepicture from "../../assets/profilepicture.png";
 
 // Components
 import { Layout, Menu } from "antd";
-import Home from "../../pages/Home";
-import Products from "../../pages/Products";
-import MainMap from "../../pages/MainMap";
-import Videos from "../../pages/Videos";
-
 // Styles
 import * as S from "./Navbar.styles";
 import "../../index.css";
 import "antd/dist/antd.css";
 
-const { Header, Content, Sider } = Layout;
+const { Sider } = Layout;
 
 const Navbar = () => {
   return (
@@ -84,25 +79,6 @@ const Navbar = () => {
           </a>
         </div>
       </Sider>
-      <Layout>
-        <Header
-          className="site-layout-sub-header-background"
-          style={{ padding: 0 }}
-        />
-        <Content
-          style={{
-            margin: "24px 16px",
-            padding: 24,
-            background: "#fff",
-            minHeight: 280,
-          }}
-        >
-          <Route path="/" component={Home} />
-          <Route path="/map" component={MainMap} />
-          <Route path="/products" component={Products} />
-          <Route path="/videos" component={Videos} />
-        </Content>
-      </Layout>
     </Layout>
   );
 };
