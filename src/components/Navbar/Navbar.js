@@ -23,6 +23,7 @@ const Navbar = () => {
   return (
     <Layout>
       <Sider
+        style={{ background: "#F2F2F2" }}
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => {
@@ -33,7 +34,12 @@ const Navbar = () => {
         }}
       >
         <S.MenuContainer>
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+          <Menu
+            theme="light"
+            style={{ background: "#F2F2F2" }}
+            mode="inline"
+            defaultSelectedKeys={["1"]}
+          >
             <Menu.Item key="1" icon={<HomeIcon />}>
               Home
               <Link to="/" />
@@ -52,7 +58,7 @@ const Navbar = () => {
             </Menu.Item>
           </Menu>
         </S.MenuContainer>
-        <div className="w-full bottom-0 absolute flex-shrink-0 flex bg-gray-700 p-4">
+        <div className="w-full bottom-0 absolute flex-shrink-0 flex bg-gray-300 p-4">
           <a
             href="https://www.linkedin.com/in/zhangyiqi/"
             target="_blank"
@@ -68,10 +74,10 @@ const Navbar = () => {
                 />
               </div>
               <div className="ml-5 mt-1">
-                <p className="text-sm font-medium text-white mb-2">
+                <p className="text-sm font-medium text-gray-800 mb-2">
                   Yiqi Zhang
                 </p>
-                <p className="text-xs font-medium text-gray-300 group-hover:text-gray-200">
+                <p className="text-xs font-medium text-gray-800 group-hover:text-blue-500">
                   View profile
                 </p>
               </div>
