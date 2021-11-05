@@ -3,15 +3,16 @@ import { Route, Link } from "react-router-dom";
 
 // Assets
 import {
-  VideoCameraIcon,
-  GiftIcon,
-  InboxIcon,
   FlagIcon,
+  HomeIcon,
+  GiftIcon,
+  VideoCameraIcon,
 } from "@heroicons/react/outline";
 import profilepicture from "../../assets/profilepicture.png";
 
 // Components
 import { Layout, Menu } from "antd";
+import Home from "../../pages/Home";
 import Products from "../../pages/Products";
 import MainMap from "../../pages/MainMap";
 import Videos from "../../pages/Videos";
@@ -36,10 +37,9 @@ const Navbar = () => {
           console.log(collapsed, type);
         }}
       >
-        <div className="logo" />
         <S.MenuContainer>
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={["2"]}>
-            <Menu.Item key="1" icon={<GiftIcon />}>
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+            <Menu.Item key="1" icon={<HomeIcon />}>
               Home
               <Link to="/" />
             </Menu.Item>
@@ -47,12 +47,13 @@ const Navbar = () => {
               Courses
               <Link to="/map" />
             </Menu.Item>
-            <Menu.Item key="3" icon={<VideoCameraIcon />}>
+            <Menu.Item key="3" icon={<GiftIcon />}>
+              Products
+              <Link to="/products" />
+            </Menu.Item>
+            <Menu.Item key="4" icon={<VideoCameraIcon />}>
               Videos
               <Link to="/videos" />
-            </Menu.Item>
-            <Menu.Item key="4" icon={<InboxIcon />}>
-              More Soon
             </Menu.Item>
           </Menu>
         </S.MenuContainer>
@@ -96,8 +97,9 @@ const Navbar = () => {
             minHeight: 280,
           }}
         >
-          <Route exact path="/" component={Products} />
+          <Route path="/" component={Home} />
           <Route path="/map" component={MainMap} />
+          <Route path="/products" component={Products} />
           <Route path="/videos" component={Videos} />
         </Content>
       </Layout>
