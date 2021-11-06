@@ -14,15 +14,15 @@ export default function HomePage() {
           aria-hidden="true"
           className="absolute inset-0 bg-gray-900 bg-opacity-50"
         />
-        <div className="relative max-w-3xl w-3/5 mx-auto flex flex-col items-center text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <div className="relative max-w-3xl w-4/6 mx-auto flex flex-col items-center text-center">
+          <h2 className="text-6xl font-extrabold tracking-tight text-white">
             NaborlyGolf
           </h2>
-          <p className="mt-3 text-xl text-white">
+          <p className="mt-3 text-2xl text-white">
             Browse nearby courses, view products and watch instructional videos
             to help improve your game.
           </p>
-          <p className="mt-1 text-m text-white">
+          <p className="mt-1 text-base text-white">
             Built with React, antd, axios, react-player, styled-components, swr,
             tailwindCSS, CoinDesk API & Google Maps API.
           </p>
