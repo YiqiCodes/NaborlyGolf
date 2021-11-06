@@ -43,7 +43,7 @@ const Marker = ({
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
-          className="fixed z-10 inset-0 overflow-y-auto"
+          className="flex items-center justify-center fixed z-10 inset-0 overflow-y-auto"
           onClose={setOpen}
         >
           <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -75,7 +75,7 @@ const Marker = ({
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
+              <div className="inline-block align-bottom bg-white rounded-lg px-16 py-8 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full">
                 <div>
                   <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
                     <FlagIcon className="h-6 w-6 text-600" aria-hidden="true" />
@@ -93,10 +93,18 @@ const Marker = ({
                         <div>Country: {country}</div>
                         <div>Latitude: {lat}</div>
                         <div>Longitude: {lng}</div>
-                        <div>Holes: {holes}</div>
-                        <div>Public: {isPublic ? "Yes" : "No"}</div>
-                        <div>Range: {hasRange ? "Yes" : "No"}</div>
-                        <div>Rating: {rating}</div>
+                        <div>{holes ? `Holes: ${holes}` : null}</div>
+                        <div>
+                          {isPublic !== undefined
+                            ? `Public: ${isPublic ? "Yes" : "No"}`
+                            : null}
+                        </div>
+                        <div>
+                          {hasRange !== undefined
+                            ? `Range: ${hasRange ? "Yes" : "No"}`
+                            : null}
+                        </div>
+                        <div>{rating ? `Rating: ${rating}` : null}</div>
                       </p>
                     </div>
                   </div>

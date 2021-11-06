@@ -11,7 +11,7 @@ import Marker from "../Marker/Marker";
 import { dummyGolfCourses } from "../../vars/GolfCourses";
 
 const DefaultMap = ({ center, zoom }) => {
-  const getMapOptions = (maps: any) => {
+  const getMapOptions = () => {
     return {
       disableDefaultUI: true,
       mapTypeControl: true,
@@ -42,7 +42,7 @@ const DefaultMap = ({ center, zoom }) => {
           country="Canada"
           lat={center.lat}
           lng={center.lng}
-          name="My Home"
+          property="My Home"
         />
         {dummyGolfCourses.map((golfCourse, index) => {
           return (

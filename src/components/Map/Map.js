@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 // Antd
 // import { Switch } from "antd";
@@ -17,11 +17,8 @@ import "antd/dist/antd.css";
 const Map = () => {
   // const {allProperties, isLoading, isError} = useGetAllProperties()
 
-  // eslint-disable-next-line
-  const [center, setCenter] = useState({ lat: 43.941676, lng: -79.465868 });
-  // eslint-disable-next-line
-  const [zoom, setZoom] = useState(11);
-  // const [showHeatMap, setShowHeatMap] = useState(false);
+  const center = { lat: 43.941676, lng: -79.465868 };
+  const zoom = 11;
 
   // const onChange = () => {
   //   setShowHeatMap((prev) => !prev);
