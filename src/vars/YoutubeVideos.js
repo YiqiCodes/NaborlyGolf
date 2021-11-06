@@ -18,6 +18,6 @@ export const videos = [
     videoId: "PEac_olXeDI",
     href: "https://www.youtube.com/watch?v=PEac_olXeDI",
     description:
-      "Watch as Rickie provides extreme detail as he goes through his putting process.",
+      "Watch as Rickie provides extreme detail regarding his putting process.",
   },
 ];

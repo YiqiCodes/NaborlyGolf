@@ -15,7 +15,9 @@ export default function InstructionalVideos() {
             From the pros.
           </h2>
           <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-            Join Andy & Piers and learn how the best approach the game.
+            Join Andy & Piers and learn
+            <br />
+            how the best approach the game.
           </p>
         </div>
         <div className="h-4/5 2xl:h-3/5 flex -right-3.5 relative overflow-y-scroll xl:overflow-hidden 2xl:overflow-y-scroll mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
