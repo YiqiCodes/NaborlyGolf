@@ -4,7 +4,7 @@ Browse nearby courses, view products and watch instructional videos to help impr
 
 Built with React, antd, axios, react-player, styled-components, swr, tailwindCSS, CoinDesk API and Google Maps API.
 
-Deployed with Netlify: https://naborly.netlify.app/
+Deployed with Netlify: https://naborlygolf.netlify.app
 
 <img width="1440" alt="Screen Shot 2021-11-06 at 2 05 12 PM" src="https://user-images.githubusercontent.com/58444087/140619486-7a83ad1b-f409-4dca-bd57-3fa460f5ea47.png">
 <img width="1440" alt="Screen Shot 2021-11-06 at 2 17 51 PM" src="https://user-images.githubusercontent.com/58444087/140619824-3f658790-b7ca-43b9-819e-fbef47871e0b.png">
