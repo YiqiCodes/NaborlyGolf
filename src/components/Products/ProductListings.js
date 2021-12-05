@@ -1,5 +1,5 @@
 // Hooks
-import useGetBTCPrice from "../../hooks/UseGetBTCPrice";
+import useGetBTCPrice from "../../hooks/GetWithSWR/UseGetBTCPrice";
 
 // Vars
 import { products } from "../../vars/GolfProducts";
