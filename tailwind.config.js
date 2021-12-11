@@ -3,11 +3,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
-      sm: "640px",
-      // => @media (min-width: 640px) { ... }
+      sm: "400px",
+      // => @media (min-width: 400px) { ... }
 
-      md: "768px",
-      // => @media (min-width: 768px) { ... }
+      md: "700px",
+      // => @media (min-width: 700px) { ... }
 
       lg: "1024px",
       // => @media (min-width: 1024px) { ... }

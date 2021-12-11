@@ -4,7 +4,10 @@ import { Tooltip } from "antd";
 // Assets
 import golfCoursePhoto from "../../assets/golfcourse.jpg";
 
-export default function HomePage() {
+// Components
+import WeatherBanner from "./WeatherBanner";
+
+export default function HomePage({ weather }) {
   return (
     <div className="flex items-center w-full relative bg-white">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -22,7 +25,7 @@ export default function HomePage() {
         <Tooltip
           placement="top"
           title="Built with React, antd, axios, react-player, styled-components, swr,
-            tailwindCSS, CoinDesk API & Google Maps API."
+          tailwindCSS, CoinDesk API & Google Maps API."
         >
           <div className="cursor-help relative max-w-3xl w-4/6 mx-auto flex flex-col items-center text-center">
             <h2 className="text-6xl font-extrabold tracking-tight text-white">
@@ -35,6 +38,7 @@ export default function HomePage() {
           </div>
         </Tooltip>
       </div>
+      <WeatherBanner weather={weather} />
     </div>
   );
 }
