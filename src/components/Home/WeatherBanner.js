@@ -1,5 +1,3 @@
-import React from "react";
-
 // Icons
 import { FlagIcon, AdjustmentsIcon, SunIcon } from "@heroicons/react/outline";
 
@@ -7,6 +5,8 @@ import { FlagIcon, AdjustmentsIcon, SunIcon } from "@heroicons/react/outline";
 import * as S from "./WeatherBanner.styles";
 
 const WeatherBanner = ({ weather }) => {
+  if (weather === null) return null;
+
   const stats = [
     {
       id: 1,
