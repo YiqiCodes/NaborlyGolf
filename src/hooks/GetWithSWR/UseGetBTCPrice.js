@@ -1,8 +1,6 @@
 import axios from "axios";
 import useSWR from "swr";
 
-// Initial GET Hook setup
-// Need to create route & server via node/express
 const useGetBTCPrice = () => {
   const fetcher = (url) => axios.get(`${url}`).then((res) => res.data);
 

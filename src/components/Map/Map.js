@@ -1,22 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 // Components
 import DefaultMap from "./DefaultMap";
 
-// Hooks
-import getUserLocation from "../../hooks/CustomHooks/GetUserLocation";
+// Recoil
+import { useRecoilValue } from "recoil";
+import userCoordinatesAtom from "../../recoil/atoms/UserCoordinatesAtom";
 
 // Styles
 import * as S from "./Map.styles";
 import "antd/dist/antd.css";
 
 const Map = () => {
-  const [center, setCenter] = useState({ lat: 43.941676, lng: -79.465868 });
+  const center = useRecoilValue(userCoordinatesAtom);
   const zoom = 11;
-
-  useEffect(() => {
-    getUserLocation({ setCenter });
-  }, [center]);
 
   return (
     <>
