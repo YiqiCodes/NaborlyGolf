@@ -8,10 +8,18 @@ import userWeatherAtom from "../../recoil/atoms/UserWeatherAtom";
 // Styles
 import * as S from "./WeatherBanner.styles";
 
+import { Spin } from "antd";
+
 const WeatherBanner = () => {
   const weather = useRecoilValue(userWeatherAtom);
 
-  if (weather === null) return null;
+  if (weather === null)
+    return (
+      <S.WeatherBanner>
+        <S.LoadingText>Getting the forecast...</S.LoadingText>
+        <Spin />
+      </S.WeatherBanner>
+    );
 
   const stats = [
     {
@@ -36,7 +44,7 @@ const WeatherBanner = () => {
 
   return (
     <S.WeatherBanner>
-      <dl className="mt-5 grid grid-cols-3 gap-5 sm:grid-cols-3 lg:grid-cols-3">
+      <dl className="mt-5 grid grid-cols-3 sm:gap-2 md:gap-5 sm:grid-cols-3 lg:grid-cols-3">
         {stats.map((item) => (
           <div
             key={item.id}

@@ -20,11 +20,12 @@ const options = {
 const weatherAPIToken = process.env.REACT_APP_API_WEATHER_TOKEN;
 
 const Home = () => {
-  // const [weather, setWeather] = useState(null);
   const setWeather = useSetRecoilState(userWeatherAtom);
   const setUserCoords = useSetRecoilState(userCoordinatesAtom);
 
   useEffect(() => {
+    // Fetches weather based on user coordinates
+    // Stores coordinates and weather in atoms
     const success = (pos) => {
       let crd = pos.coords;
       setUserCoords({ lat: crd.latitude, lng: crd.longitude });
