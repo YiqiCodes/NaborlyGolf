@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+
+// Axios
+import axios from "axios";
 
 // Components
 import HomePage from "../components/Home/HomePage";
 
 // Recoil
-import axios from "axios";
+import { useSetRecoilState } from "recoil";
+import userCoordinatesAtom from "../recoil/atoms/UserCoordinatesAtom";
+import userWeatherAtom from "../recoil/atoms/UserWeatherAtom";
 
 // Vars
 const options = {
@@ -15,11 +20,14 @@ const options = {
 const weatherAPIToken = process.env.REACT_APP_API_WEATHER_TOKEN;
 
 const Home = () => {
-  const [weather, setWeather] = useState(null);
+  // const [weather, setWeather] = useState(null);
+  const setWeather = useSetRecoilState(userWeatherAtom);
+  const setUserCoords = useSetRecoilState(userCoordinatesAtom);
 
   useEffect(() => {
     const success = (pos) => {
       let crd = pos.coords;
+      setUserCoords({ lat: crd.latitude, lng: crd.longitude });
       axios({
         method: "get",
         url: `http://api.weatherapi.com/v1/current.json?key=${weatherAPIToken}&q=${crd.latitude},${crd.longitude}`,
@@ -35,9 +43,9 @@ const Home = () => {
     };
 
     return navigator.geolocation.getCurrentPosition(success, error, options);
-  }, []);
+  }, [setUserCoords, setWeather]);
 
-  return <HomePage weather={weather} />;
+  return <HomePage />;
 };
 
 export default Home;

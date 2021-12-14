@@ -1,10 +1,16 @@
 // Icons
 import { FlagIcon, AdjustmentsIcon, SunIcon } from "@heroicons/react/outline";
 
+// Recoil
+import { useRecoilValue } from "recoil";
+import userWeatherAtom from "../../recoil/atoms/UserWeatherAtom";
+
 // Styles
 import * as S from "./WeatherBanner.styles";
 
-const WeatherBanner = ({ weather }) => {
+const WeatherBanner = () => {
+  const weather = useRecoilValue(userWeatherAtom);
+
   if (weather === null) return null;
 
   const stats = [

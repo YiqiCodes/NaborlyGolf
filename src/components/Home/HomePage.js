@@ -7,7 +7,7 @@ import golfCoursePhoto from "../../assets/golfcourse.jpg";
 // Components
 import WeatherBanner from "./WeatherBanner";
 
-export default function HomePage({ weather }) {
+export default function HomePage() {
   return (
     <div className="flex items-center w-full relative bg-white">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -38,7 +38,7 @@ export default function HomePage({ weather }) {
           </div>
         </Tooltip>
       </div>
-      <WeatherBanner weather={weather} />
+      <WeatherBanner />
     </div>
   );
 }
