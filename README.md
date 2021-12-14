@@ -1,8 +1,8 @@
-# NaborlyGolf 
+# NaborlyGolf
 
-Browse nearby courses, view products and watch instructional videos to help improve your game. 
+Browse nearby courses, view products and watch instructional videos to help improve your game.
 
-Built with React, antd, axios, react-player, styled-components, swr, tailwindCSS, CoinDesk API and Google Maps API.
+Built with React, antd, axios, react-player, styled-components, swr, tailwindCSS, CoinDesk API, Weather API and Google Maps API.
 
 Deployed with Netlify: https://naborlygolf.netlify.app
 
