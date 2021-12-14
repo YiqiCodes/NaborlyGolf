@@ -31,7 +31,7 @@ const Home = () => {
       setUserCoords({ lat: crd.latitude, lng: crd.longitude });
       axios({
         method: "get",
-        url: `http://api.weatherapi.com/v1/current.json?key=${weatherAPIToken}&q=${crd.latitude},${crd.longitude}`,
+        url: `https://api.weatherapi.com/v1/current.json?key=${weatherAPIToken}&q=${crd.latitude},${crd.longitude}`,
       }).then((res) => {
         setWeather(res.data);
       });
