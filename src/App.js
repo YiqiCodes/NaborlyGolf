@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import MainMap from "./pages/MainMap";
 import Products from "./pages/Products";
 import Videos from "./pages/Videos";
+import Yardages from "./pages/Yardages";
 
 // Styles
 import "./App.css";
@@ -19,6 +20,9 @@ function App() {
       <Navbar />
       <Route exact path="/" name="Home">
         <Home />
+      </Route>
+      <Route exact path="/yardages" name="Yardages">
+        <Yardages />
       </Route>
       <Route exact path="/map" name="Map">
         <MainMap />

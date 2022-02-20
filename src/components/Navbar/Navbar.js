@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 // Assets
 import {
+  ChartBarIcon,
   FlagIcon,
   HomeIcon,
   GiftIcon,
@@ -44,15 +45,19 @@ const Navbar = () => {
               Home
               <Link to="/" />
             </Menu.Item>
-            <Menu.Item key="2" icon={<FlagIcon />}>
+            <Menu.Item key="2" icon={<ChartBarIcon />}>
+              Yardages
+              <Link to="/yardages" />
+            </Menu.Item>
+            <Menu.Item key="3" icon={<FlagIcon />}>
               Courses
               <Link to="/map" />
             </Menu.Item>
-            <Menu.Item key="3" icon={<GiftIcon />}>
+            <Menu.Item key="4" icon={<GiftIcon />}>
               Products
               <Link to="/products" />
             </Menu.Item>
-            <Menu.Item key="4" icon={<VideoCameraIcon />}>
+            <Menu.Item key="5" icon={<VideoCameraIcon />}>
               Videos
               <Link to="/videos" />
             </Menu.Item>
