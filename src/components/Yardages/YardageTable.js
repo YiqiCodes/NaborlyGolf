@@ -50,7 +50,7 @@ export default function YardageTable() {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {yardages.map((club, index) =>
+                {yardages.userYardages.stockYardages.map((club, index) =>
                   club.name === null ? null : ( // Does not render row if no name exists for club
                     <tr key={index}>
                       <td className="px-6 py-4 whitespace-nowrap">
