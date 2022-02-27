@@ -10,7 +10,7 @@ const useGetYardages = () => {
   );
 
   return {
-    yardages: data,
+    yardages: data.userYardages.stockYardages,
     isLoading: !error && !data,
     isError: error,
   };
