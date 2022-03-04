@@ -1,7 +1,7 @@
 import React from "react";
 
 // Components
-import ProductListings from "../components/Products/ProductListings";
+import ProductListings from "../components/products/ProductListings";
 
 const Products = () => {
   return <ProductListings />;

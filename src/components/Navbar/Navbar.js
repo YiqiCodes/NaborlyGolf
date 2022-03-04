@@ -9,10 +9,17 @@ import {
   GiftIcon,
   VideoCameraIcon,
 } from "@heroicons/react/outline";
-import profilepicture from "../../assets/profilepicture.png";
+
+// import profilepicture from "../../assets/profilepicture.png";
+
+// Auth
+import { useAuth0 } from "@auth0/auth0-react";
 
 // Components
 import { Layout, Menu } from "antd";
+import LoginWithAuth0 from "../buttons/LoginWithAuth0";
+import LogoutWithAuth0 from "../buttons/LogoutWithAuth0";
+
 // Styles
 import * as S from "./Navbar.styles";
 import "../../index.css";
@@ -21,6 +28,10 @@ import "antd/dist/antd.css";
 const { Sider } = Layout;
 
 const Navbar = () => {
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  console.log("User:", user);
+  console.log("Is Authenticated", isAuthenticated);
+
   return (
     <Layout>
       <Sider
@@ -63,8 +74,19 @@ const Navbar = () => {
             </Menu.Item>
           </Menu>
         </S.MenuContainer>
+
         <div className="w-full bottom-0 absolute flex-shrink-0 flex bg-gray-300 p-4">
-          <a
+          <LoginWithAuth0 />
+          <LogoutWithAuth0 />
+
+          {isAuthenticated && (
+            <div>
+              <img src={user.picture} alt={user.name} />
+              <h2>{user.name}</h2>
+              <p>{user.email}</p>
+            </div>
+          )}
+          {/* <a
             href="https://www.linkedin.com/in/zhangyiqi/"
             target="_blank"
             rel="noreferrer"
@@ -87,7 +109,7 @@ const Navbar = () => {
                 </p>
               </div>
             </div>
-          </a>
+          </a> */}
         </div>
       </Sider>
     </Layout>

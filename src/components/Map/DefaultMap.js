@@ -2,7 +2,7 @@ import React from "react";
 import GoogleMapReact from "google-map-react";
 
 // Components
-import Marker from "../Marker/Marker";
+import Marker from "../marker/Marker";
 
 // Hooks
 // import useGetAllProperties from "../../hooks/UseGetAllProperties";
