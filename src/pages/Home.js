@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 
 // Components
-import HomePage from "../components/Home/HomePage";
+import HomePage from "../components/home/HomePage";
 
 // Recoil
 import { useSetRecoilState } from "recoil";

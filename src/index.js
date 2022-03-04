@@ -1,15 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+
+// Auth
+import { Auth0Provider } from "@auth0/auth0-react";
+
+// Components
+import App from "./App";
+
+// Recoil
 import { RecoilRoot } from "recoil";
+
+// Styles
+import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <RecoilRoot>
-        <App />
+        <Auth0Provider
+          domain="dev-xlq9lv5t.us.auth0.com"
+          clientId="EqXkuTbNocKaxX66Ngi0vYhV3E5cnhfE"
+          redirectUri="http://localhost:3000/"
+        >
+          <App />
+        </Auth0Provider>
       </RecoilRoot>
     </BrowserRouter>
   </React.StrictMode>,

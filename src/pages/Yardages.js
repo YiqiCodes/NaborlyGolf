@@ -1,7 +1,7 @@
 import React from "react";
 
 // Components
-import YardageTable from "../components/Yardages/YardageTable";
+import YardageTable from "../components/yardages/YardageTable";
 
 const Yardages = () => {
   return <YardageTable />;
