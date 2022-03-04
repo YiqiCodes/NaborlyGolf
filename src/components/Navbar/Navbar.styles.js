@@ -8,4 +8,8 @@ export const MenuContainer = styled.div`
 
 export const UserProfileContainer = styled.div``;
 
-export const ButtonContainer = styled.div``;
+export const RotatedDiv = styled.div`
+  margin-left: 0.5rem;
+  transform: ${(props) =>
+    props.upsideDown ? "rotate(180deg)" : "rotate(180deg)"};
+`;

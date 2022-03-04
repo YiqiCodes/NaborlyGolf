@@ -10,8 +10,6 @@ import {
   VideoCameraIcon,
 } from "@heroicons/react/outline";
 
-// import profilepicture from "../../assets/profilepicture.png";
-
 // Auth
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -74,31 +72,65 @@ const Navbar = () => {
             </Menu.Item>
           </Menu>
         </S.MenuContainer>
-        <S.UserProfileContainer className="w-full bottom-0 absolute flex-shrink-0 flex bg-gray-300 p-4">
-          <S.ButtonContainer>
-            {isAuthenticated ? <LogoutWithAuth0 /> : <LoginWithAuth0 />}
-          </S.ButtonContainer>
-          <div>
-            {isAuthenticated && !isLoading && (
-              <div className="flex-shrink-0 w-full group block">
-                <div className="flex items-start ml-3">
-                  <div>
-                    <img
-                      className="inline-block h-12 w-12 rounded-lg"
-                      src={user.picture}
-                      alt=""
-                    />
-                  </div>
-                  <div className="ml-5 mt-1">
-                    <p className="text-sm font-medium text-gray-800 mb-2">
-                      Welcome, {user.nickname}
-                    </p>
+        {!isLoading ? (
+          <S.UserProfileContainer className="w-full bottom-0 absolute flex-shrink-0 flex bg-gray-300 p-4">
+            {isAuthenticated ? (
+              <>
+                <div>
+                  {isAuthenticated && !isLoading && (
+                    <div className="flex-shrink-0 w-full group block">
+                      <div className="flex items-start ml-3">
+                        <div className="mr-5 mt-1">
+                          <p className="text-sm font-medium text-gray-800 mb-2">
+                            Welcome, {user.nickname}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="flex">
+                  <LogoutWithAuth0 />
+                  <div className="flex items-center">
+                    <S.RotatedDiv upsideDown>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </S.RotatedDiv>
                   </div>
                 </div>
+              </>
+            ) : (
+              <div className="w-full flex justify-end">
+                <LoginWithAuth0 />
+                {/* Copied "login" svg from https://heroicons.com/ */}
+                <S.RotatedDiv>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </S.RotatedDiv>
               </div>
             )}
-          </div>
-        </S.UserProfileContainer>
+          </S.UserProfileContainer>
+        ) : null}
       </Sider>
     </Layout>
   );
