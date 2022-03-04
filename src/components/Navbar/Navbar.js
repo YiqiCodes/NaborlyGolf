@@ -74,43 +74,31 @@ const Navbar = () => {
             </Menu.Item>
           </Menu>
         </S.MenuContainer>
-
-        <div className="w-full bottom-0 absolute flex-shrink-0 flex bg-gray-300 p-4">
-          <LoginWithAuth0 />
-          <LogoutWithAuth0 />
-
-          {isAuthenticated && (
-            <div>
-              <img src={user.picture} alt={user.name} />
-              <h2>{user.name}</h2>
-              <p>{user.email}</p>
-            </div>
-          )}
-          {/* <a
-            href="https://www.linkedin.com/in/zhangyiqi/"
-            target="_blank"
-            rel="noreferrer"
-            className="flex-shrink-0 w-full group block"
-          >
-            <div className="flex items-start ml-3">
-              <div>
-                <img
-                  className="inline-block h-12 w-12 rounded-full"
-                  src={profilepicture}
-                  alt=""
-                />
+        <S.UserProfileContainer className="w-full bottom-0 absolute flex-shrink-0 flex bg-gray-300 p-4">
+          <S.ButtonContainer>
+            {isAuthenticated ? <LogoutWithAuth0 /> : <LoginWithAuth0 />}
+          </S.ButtonContainer>
+          <div>
+            {isAuthenticated && !isLoading && (
+              <div className="flex-shrink-0 w-full group block">
+                <div className="flex items-start ml-3">
+                  <div>
+                    <img
+                      className="inline-block h-12 w-12 rounded-lg"
+                      src={user.picture}
+                      alt=""
+                    />
+                  </div>
+                  <div className="ml-5 mt-1">
+                    <p className="text-sm font-medium text-gray-800 mb-2">
+                      Welcome, {user.nickname}
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="ml-5 mt-1">
-                <p className="text-sm font-medium text-gray-800 mb-2">
-                  Yiqi Zhang
-                </p>
-                <p className="text-xs font-medium text-gray-800 group-hover:text-blue-500">
-                  View profile
-                </p>
-              </div>
-            </div>
-          </a> */}
-        </div>
+            )}
+          </div>
+        </S.UserProfileContainer>
       </Sider>
     </Layout>
   );

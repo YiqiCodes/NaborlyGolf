@@ -5,3 +5,7 @@ export const MenuContainer = styled.div`
     width: 20%;
   }
 `;
+
+export const UserProfileContainer = styled.div``;
+
+export const ButtonContainer = styled.div``;
