@@ -69,7 +69,7 @@ const Navbar = () => {
             {user ? (
               <Menu.Item key="2" icon={<ChartBarIcon />}>
                 Yardages
-                <Link to="/yardages" />;
+                <Link to="/yardages" />
               </Menu.Item>
             ) : (
               <Menu.Item
