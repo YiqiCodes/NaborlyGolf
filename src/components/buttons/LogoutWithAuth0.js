@@ -6,9 +6,7 @@ const LogoutButton = () => {
 
   return (
     <button
-      onClick={() =>
-        logout({ returnTo: `${process.env.REACT_APP_CLIENT_URL}` })
-      }
+      onClick={() => logout({ returnTo: process.env.REACT_APP_CLIENT_URL })}
     >
       Logout
     </button>
