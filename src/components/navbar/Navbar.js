@@ -31,6 +31,7 @@ const { Sider } = Layout;
 
 const Navbar = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
+  console.log("User:", user);
 
   const setUserCoords = useSetRecoilState(userLoginCredentialsAtom);
   useEffect(() => {
