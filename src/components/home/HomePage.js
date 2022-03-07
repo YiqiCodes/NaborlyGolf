@@ -32,8 +32,8 @@ export default function HomePage() {
               NaborlyGolf
             </h2>
             <p className="mt-5 text-2xl text-white">
-              Browse nearby courses, view products and watch instructional
-              videos to help improve your game.
+              Save your yardages, browse nearby courses, view products and watch
+              instructional videos to help improve your game.
             </p>
           </div>
         </Tooltip>
