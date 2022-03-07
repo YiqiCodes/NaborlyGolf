@@ -24,8 +24,8 @@ export default function HomePage() {
         />
         <Tooltip
           placement="top"
-          title="Built with React, antd, axios, react-player, styled-components, swr,
-          tailwindCSS, CoinDesk API & Google Maps API."
+          title="Built with React, antd, auth0, axios, react-player, recoil.js, styled-components, swr,
+          tailwindCSS, CoinDesk API, Google Maps API & Weather API"
         >
           <div className="cursor-help relative max-w-3xl w-4/6 mx-auto flex flex-col items-center text-center">
             <h2 className="text-6xl font-extrabold tracking-tight text-white">
