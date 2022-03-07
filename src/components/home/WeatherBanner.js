@@ -3,7 +3,7 @@ import { FlagIcon, AdjustmentsIcon, SunIcon } from "@heroicons/react/outline";
 
 // Recoil
 import { useRecoilValue } from "recoil";
-import userWeatherAtom from "../../recoil/atoms/UserWeatherAtom";
+import userWeatherAtom from "../../recoil/UserWeatherAtom";
 
 // Styles
 import * as S from "./WeatherBanner.styles";

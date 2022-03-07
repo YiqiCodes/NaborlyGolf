@@ -8,8 +8,8 @@ import HomePage from "../components/home/HomePage";
 
 // Recoil
 import { useSetRecoilState } from "recoil";
-import userCoordinatesAtom from "../recoil/atoms/UserCoordinatesAtom";
-import userWeatherAtom from "../recoil/atoms/UserWeatherAtom";
+import userCoordinatesAtom from "../recoil/UserCoordinatesAtom";
+import userWeatherAtom from "../recoil/UserWeatherAtom";
 
 // Vars
 const options = {

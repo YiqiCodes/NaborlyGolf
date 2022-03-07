@@ -3,7 +3,7 @@ import useSWR from "swr";
 
 // Recoil
 import { useRecoilValue } from "recoil";
-import userLoginCredentialsAtom from "../../recoil/atoms/UserLoginCredentialsAtom";
+import userLoginCredentialsAtom from "../../recoil/UserLoginCredentialsAtom";
 
 const useGetYardages = () => {
   const fetcher = (url) => axios.get(`${url}`).then((res) => res.data);

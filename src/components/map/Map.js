@@ -5,7 +5,7 @@ import DefaultMap from "./DefaultMap";
 
 // Recoil
 import { useRecoilValue } from "recoil";
-import userCoordinatesAtom from "../../recoil/atoms/UserCoordinatesAtom";
+import userCoordinatesAtom from "../../recoil/UserCoordinatesAtom";
 
 // Styles
 import * as S from "./Map.styles";

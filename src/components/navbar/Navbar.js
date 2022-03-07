@@ -20,7 +20,7 @@ import LogoutWithAuth0 from "../buttons/LogoutWithAuth0";
 
 // Recoil
 import { useSetRecoilState } from "recoil";
-import userLoginCredentialsAtom from "../../recoil/atoms/UserLoginCredentialsAtom";
+import userLoginCredentialsAtom from "../../recoil/UserLoginCredentialsAtom";
 
 // Styles
 import * as S from "./Navbar.styles";
