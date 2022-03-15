@@ -1,0 +1,81 @@
+{
+  "yardages": {
+    "user": "yiqizhang@gmail.com",
+    "stockYardages": [
+      {
+        "Loft Wedge": {
+          "name": "Callaway Jaws Wedge 60",
+          "yardages": [70, 60, 80]
+        }
+      },
+      { "Sand Wedge": { "name": null, "yardages": [null, null] } },
+      {
+        "Assist Wedge": {
+          "name": "Callaway Apex 21 AW",
+          "yardages": [90, 80, 100]
+        }
+      },
+      {
+        "Pitching Wedge": {
+          "name": "Callaway Apex 21 PW",
+          "yardages": [115, 105, 125]
+        }
+      },
+      {
+        "Nine Iron": {
+          "name": "Callaway Apex 21 9I",
+          "yardages": [125, 125, 135]
+        }
+      },
+      {
+        "Eight Iron": {
+          "name": "Callaway Apex 21 8I",
+          "yardages": [135, 135, 145]
+        }
+      },
+      {
+        "Seven Iron": {
+          "name": "Callaway Apex 21 7I",
+          "yardages": [145, 145, 155]
+        }
+      },
+      {
+        "Six Iron": {
+          "name": "Callaway Apex 21 6I",
+          "yardages": [155, 155, 165]
+        }
+      },
+      {
+        "Five Iron": {
+          "name": "Callaway Apex 21 5I",
+          "yardages": [165, 165, 175]
+        }
+      },
+      { "Four Iron": { "name": null, "yardages": [null, null] } },
+      {
+        "Four Hybrid": {
+          "name": "Callaway Pro 21 Hybrid",
+          "yardages": [175, 175, 185]
+        }
+      },
+      {
+        "Three Hybrid": {
+          "name": "Callaway Pro 21 Hybrid",
+          "yardages": [185, 185, 200]
+        }
+      },
+      {
+        "Three Wood": {
+          "name": "Big Bertha 3 Wood",
+          "yardages": [200, 200, 220]
+        }
+      },
+      {
+        "Driver": {
+          "name": "Big Bertha B21 Driver",
+          "yardages": [250, 240, 280]
+        }
+      }
+    ]
+  }
+}

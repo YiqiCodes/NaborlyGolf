@@ -66,7 +66,7 @@ const Navbar = () => {
             </Menu.Item>
             {/* If logged in: display yardages component
              ** If not logged in: display notification */}
-            {user ? (
+            {!user ? (
               <Menu.Item key="2" icon={<ChartBarIcon />}>
                 Yardages
                 <Link to="/yardages" />
