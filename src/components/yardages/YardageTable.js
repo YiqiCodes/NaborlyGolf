@@ -4,8 +4,7 @@ import useGetYardages from "../../hooks/GetWithSWR/UseGetYardages";
 export default function YardageTable() {
   const { yardages, isLoading, isError } = useGetYardages();
 
-  if (!yardages || !yardages.userYardages.stockYardages || isLoading || isError)
-    return null;
+  if (!yardages || !yardages.userYardages || isLoading || isError) return null;
 
   return (
     <div className="flex w-full bg-white relative flex-col">
