@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import MainMap from "./pages/MainMap";
 import Products from "./pages/Products";
 import Videos from "./pages/Videos";
-import Yardages from "./pages/Yardages";
+import Yardages from "./pages/yardages/Yardages";
 
 // Styles
 import "./App.css";

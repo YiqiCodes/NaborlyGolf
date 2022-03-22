@@ -10,7 +10,7 @@ export default function ProductListings() {
   if (isLoading || isError) return null;
 
   const getBTCPrice = (dollarPrice) => {
-    return (dollarPrice / btcPrice.bpi.USD.rate_float).toFixed(10);
+    return (dollarPrice / btcPrice.bpi.USD.rate_float).toFixed(7);
   };
 
   return (
