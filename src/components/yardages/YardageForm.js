@@ -9,6 +9,10 @@ import { notification } from "antd";
 // Auth
 import { useAuth0 } from "@auth0/auth0-react";
 
+// TODO: To update window.location.reload()
+// TODO: To move post request to hook
+// TODO: To add loading state and render spinner
+
 export default function YardageForm() {
   const { user } = useAuth0();
   const [formData, setFormData] = useState({
@@ -36,7 +40,7 @@ export default function YardageForm() {
 
   const openNotificationWithIcon = (type) => {
     notification[type]({
-      message: "There are mulligans given on the tour",
+      message: "No mulligans on the tour",
       description: "Please double check and try again.",
     });
   };
