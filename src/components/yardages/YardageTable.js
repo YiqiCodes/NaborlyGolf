@@ -6,6 +6,7 @@ export default function YardageTable() {
 
   if (!yardages || !yardages.userYardages || isLoading || isError) return null;
 
+  console.log("yardages", yardages);
   return (
     <div className="flex w-full bg-white relative flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -32,26 +33,24 @@ export default function YardageTable() {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {yardages.userYardages.stockYardages.map((club, index) =>
-                  club.name === null ? null : ( // Does not render row if no name exists for club
-                    <tr key={index}>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="flex items-center">
-                          <div className="ml-4">
-                            <div className="text-sm font-medium text-gray-900">
-                              {club.club}
-                            </div>
+                {yardages.userYardages.stockYardages.map((club, index) => (
+                  <tr key={index}>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <div className="flex items-center">
+                        <div className="ml-4">
+                          <div className="text-sm font-medium text-gray-900">
+                            {club.club}
                           </div>
                         </div>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                          {club.yardage}
-                        </span>
-                      </td>
-                    </tr>
-                  )
-                )}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                        {club.yardage}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
