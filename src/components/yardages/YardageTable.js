@@ -22,27 +22,9 @@ export default function YardageTable() {
                   </th>
                   <th
                     scope="col"
-                    className="hidden md:flex px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    Club Name
-                  </th>
-                  <th
-                    scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
                     Yardage
-                  </th>
-                  <th
-                    scope="col"
-                    className="hidden md:inline px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    Low
-                  </th>
-                  <th
-                    scope="col"
-                    className="hidden md:inline px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    High
                   </th>
                   <th scope="col" className="relative px-6 py-3">
                     <span className="sr-only">Edit</span>
@@ -62,31 +44,10 @@ export default function YardageTable() {
                           </div>
                         </div>
                       </td>
-                      <td className="hidden md:flex px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-900">{club.name}</div>
-                      </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                          {club.yardages[0]}
+                          {club.yardage}
                         </span>
-                      </td>
-                      <td className="hidden md:inline px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-cyan-100 text-cyan-800">
-                          {club.yardages[1]}
-                        </span>
-                      </td>
-                      <td className="hidden md:inline px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-cyan-100 text-cyan-800">
-                          {club.yardages[2]}
-                        </span>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a
-                          href="/"
-                          className="text-indigo-600 hover:text-indigo-900"
-                        >
-                          Edit
-                        </a>
                       </td>
                     </tr>
                   )
