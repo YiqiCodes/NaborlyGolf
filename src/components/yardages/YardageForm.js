@@ -59,7 +59,7 @@ export default function YardageForm() {
   return (
     <>
       {/* Button that renders modal to add club */}
-      <div className="w-full h-auto flex justify-center align-baseline  bg-gray-50 text-right sm:p8">
+      <div className="w-full h-auto flex justify-center align-baseline  bg-gray-50 text-right sm:p-8">
         <button
           onClick={() => setOpen(!open)}
           type="submit"
@@ -105,7 +105,7 @@ export default function YardageForm() {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <div className="w-full relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+              <div className="w-full relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-9/12">
                 <div className="flex w-full bg-white relative mt-10 sm:mt-0">
                   <div className="md:grid md:grid-cols-2 md:gap-6">
                     <div className="mt-5 md:mt-0 md:col-span-2">
@@ -140,17 +140,21 @@ export default function YardageForm() {
                             </div>
 
                             <div className="col-span-6" />
-
-                            <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                              <div className="block text-sm font-medium text-gray-700">
+                            <div>
+                              <label
+                                htmlFor="yardage"
+                                className="block text-sm font-medium text-gray-700"
+                              >
                                 Yardage
+                              </label>
+                              <div className="mt-1">
+                                <input
+                                  onChange={(e) => handleChange(e)}
+                                  type="number"
+                                  name="yardages"
+                                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-auto sm:text-sm border-gray-300 rounded-md p-2"
+                                />
                               </div>
-                              <input
-                                onChange={(e) => handleChange(e)}
-                                type="number"
-                                name="yardages"
-                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                              />
                             </div>
                           </div>
                         </div>

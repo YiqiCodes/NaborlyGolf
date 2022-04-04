@@ -47,120 +47,118 @@ const Navbar = () => {
   return (
     <Layout>
       <Sider
-        style={{ background: "#F2F2F2" }}
+        style={{
+          background: "#F2F2F2",
+        }}
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => {}}
         onCollapse={(collapsed, type) => {}}
       >
-        <S.MenuContainer
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-          }}
-        >
-          <Menu
-            theme="light"
-            style={{ background: "#F2F2F2" }}
-            mode="inline"
-            defaultSelectedKeys={["1"]}
-          >
-            <Menu.Item key="1" icon={<HomeIcon />}>
-              Home
-              <Link to="/" />
-            </Menu.Item>
-            {/* If logged in: display yardages component
-             ** If not logged in: display notification */}
-            {user ? (
-              <Menu.Item key="2" icon={<ChartBarIcon />}>
-                Yardages
-                <Link to="/yardages" />
+        <S.NavbarContainer>
+          <S.MenuContainer style={{ display: "flex" }}>
+            <Menu
+              theme="light"
+              style={{ background: "#F2F2F2" }}
+              mode="inline"
+              defaultSelectedKeys={["1"]}
+            >
+              <Menu.Item key="1" icon={<HomeIcon />}>
+                Home
+                <Link to="/" />
               </Menu.Item>
-            ) : (
-              <Menu.Item
-                key="2"
-                icon={<ChartBarIcon />}
-                onClick={() => {
-                  openNotificationWithIcon("warning");
-                }}
-              >
-                Yardages
+              {/* If logged in: display yardages component
+               ** If not logged in: display notification */}
+              {user ? (
+                <Menu.Item key="2" icon={<ChartBarIcon />}>
+                  Yardages
+                  <Link to="/yardages" />
+                </Menu.Item>
+              ) : (
+                <Menu.Item
+                  key="2"
+                  icon={<ChartBarIcon />}
+                  onClick={() => {
+                    openNotificationWithIcon("warning");
+                  }}
+                >
+                  Yardages
+                </Menu.Item>
+              )}
+              <Menu.Item key="3" icon={<FlagIcon />}>
+                Courses
+                <Link to="/map" />
               </Menu.Item>
-            )}
-            <Menu.Item key="3" icon={<FlagIcon />}>
-              Courses
-              <Link to="/map" />
-            </Menu.Item>
-            <Menu.Item key="4" icon={<GiftIcon />}>
-              Products
-              <Link to="/products" />
-            </Menu.Item>
-            <Menu.Item key="5" icon={<VideoCameraIcon />}>
-              Videos
-              <Link to="/videos" />
-            </Menu.Item>
-          </Menu>
-        </S.MenuContainer>
-        {!isLoading ? (
-          <S.UserProfileContainer className="w-full bottom-0 relative flex-shrink-0 flex bg-gray-300 p-4">
-            {isAuthenticated ? (
-              <>
-                <div>
-                  {isAuthenticated && !isLoading && (
-                    <div className="flex-shrink-0 w-full group block">
-                      <div className="flex items-start ml-3">
-                        <div className="mr-5 mt-1">
-                          <p className="text-sm font-medium text-gray-800 mb-2">
-                            Welcome, {user.nickname}
-                          </p>
+              <Menu.Item key="4" icon={<GiftIcon />}>
+                Products
+                <Link to="/products" />
+              </Menu.Item>
+              <Menu.Item key="5" icon={<VideoCameraIcon />}>
+                Videos
+                <Link to="/videos" />
+              </Menu.Item>
+            </Menu>
+          </S.MenuContainer>
+          {!isLoading ? (
+            <S.UserProfileContainer className="w-full bottom-0 relative flex-shrink-0 flex bg-gray-300 p-4">
+              {isAuthenticated ? (
+                <>
+                  <div>
+                    {isAuthenticated && !isLoading && (
+                      <div className="flex-shrink-0 w-full group block">
+                        <div className="flex items-start ml-3">
+                          <div className="mr-5 mt-1">
+                            <p className="text-sm font-medium text-gray-800 mb-2">
+                              Welcome, {user.nickname}
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-                <div className="flex">
-                  <LogoutWithAuth0 />
-                  <div className="flex items-center">
-                    <S.RotatedDiv upsideDown>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </S.RotatedDiv>
+                    )}
                   </div>
+                  <div className="flex">
+                    <LogoutWithAuth0 />
+                    <div className="flex items-center">
+                      <S.RotatedDiv upsideDown>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-5 w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </S.RotatedDiv>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div className="w-full flex justify-end">
+                  <LoginWithAuth0 />
+                  {/* Copied "login" svg from https://heroicons.com/ */}
+                  <S.RotatedDiv>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </S.RotatedDiv>
                 </div>
-              </>
-            ) : (
-              <div className="w-full flex justify-end">
-                <LoginWithAuth0 />
-                {/* Copied "login" svg from https://heroicons.com/ */}
-                <S.RotatedDiv>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </S.RotatedDiv>
-              </div>
-            )}
-          </S.UserProfileContainer>
-        ) : null}
+              )}
+            </S.UserProfileContainer>
+          ) : null}
+        </S.NavbarContainer>
       </Sider>
     </Layout>
   );
