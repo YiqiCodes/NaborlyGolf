@@ -59,7 +59,7 @@ export default function YardageForm() {
   return (
     <>
       {/* Button that renders modal to add club */}
-      <div className="w-full h-auto flex justify-center align-baseline px-4 py-3 bg-gray-50 text-right sm:px-6">
+      <div className="w-full h-auto flex justify-center align-baseline  bg-gray-50 text-right sm:p8">
         <button
           onClick={() => setOpen(!open)}
           type="submit"

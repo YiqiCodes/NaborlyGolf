@@ -6,7 +6,6 @@ export default function YardageTable() {
 
   if (!yardages || !yardages.userYardages || isLoading || isError) return null;
 
-  console.log("yardages", yardages);
   return (
     <div className="flex w-full bg-white relative flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -26,9 +25,6 @@ export default function YardageTable() {
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
                     Yardage
-                  </th>
-                  <th scope="col" className="relative px-6 py-3">
-                    <span className="sr-only">Edit</span>
                   </th>
                 </tr>
               </thead>

@@ -53,7 +53,13 @@ const Navbar = () => {
         onBreakpoint={(broken) => {}}
         onCollapse={(collapsed, type) => {}}
       >
-        <S.MenuContainer>
+        <S.MenuContainer
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
           <Menu
             theme="light"
             style={{ background: "#F2F2F2" }}
@@ -97,7 +103,7 @@ const Navbar = () => {
           </Menu>
         </S.MenuContainer>
         {!isLoading ? (
-          <S.UserProfileContainer className="w-full bottom-0 absolute flex-shrink-0 flex bg-gray-300 p-4">
+          <S.UserProfileContainer className="w-full bottom-0 relative flex-shrink-0 flex bg-gray-300 p-4">
             {isAuthenticated ? (
               <>
                 <div>
