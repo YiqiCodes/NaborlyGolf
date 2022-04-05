@@ -9,10 +9,6 @@ import { notification } from "antd";
 // Auth
 import { useAuth0 } from "@auth0/auth0-react";
 
-// TODO: To update window.location.reload()
-// TODO: To move post request to hook
-// TODO: To add loading state and render spinner
-
 export default function YardageForm() {
   const { user } = useAuth0();
   const [formData, setFormData] = useState({
@@ -44,6 +40,14 @@ export default function YardageForm() {
       description: "Please double check and try again.",
     });
   };
+
+  const openNotificationWithIconSubmit = (type) => {
+    notification[type]({
+      message: "Successfully updated club",
+      description: "Please double check and try again.",
+    });
+  };
+
   const handleSubmit = () => {
     if (!formData.yardage) {
       openNotificationWithIcon("error");
@@ -53,7 +57,9 @@ export default function YardageForm() {
         url: `${process.env.REACT_APP_SERVER_URL}/yardages/postYardages`,
         data: { user: user.email, clubAdded: formData },
       });
-      window.location.reload(); // to refactor, reloading for now
+      openNotificationWithIconSubmit("success");
+      setOpen(!open);
+      window.location.reload();
     }
   };
   return (
@@ -126,12 +132,12 @@ export default function YardageForm() {
                                 <option>5 Wood</option>
                                 <option>3 Hybrid</option>
                                 <option>4 Hybrid</option>
-                                <option>9 Iron</option>
-                                <option>8 Iron</option>
-                                <option>7 Iron</option>
-                                <option>6 Iron</option>
-                                <option>5 Iron</option>
                                 <option>4 Iron</option>
+                                <option>5 Iron</option>
+                                <option>6 Iron</option>
+                                <option>7 Iron</option>
+                                <option>8 Iron</option>
+                                <option>9 Iron</option>
                                 <option>Pitching Wedge</option>
                                 <option>Gap Wedge</option>
                                 <option>Sand Wedge</option>
