@@ -1,10 +1,25 @@
+import axios from "axios";
+
+// Auth
+import { useAuth0 } from "@auth0/auth0-react";
+
 // Hooks
 import useGetYardages from "../../hooks/GetWithSWR/UseGetYardages";
 
 export default function YardageTable() {
+  const { user } = useAuth0();
   const { yardages, isLoading, isError } = useGetYardages();
 
   if (!yardages || !yardages.userYardages || isLoading || isError) return null;
+
+  const handleDelete = (club) => {
+    axios({
+      method: "delete",
+      url: `${process.env.REACT_APP_SERVER_URL}/yardages/deleteYardages`,
+      data: { user: user.email, club: club },
+    });
+    window.location.reload();
+  };
 
   return (
     <div className="flex w-full bg-white relative flex-col">
@@ -26,6 +41,10 @@ export default function YardageTable() {
                   >
                     Yardage
                   </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  ></th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -46,6 +65,17 @@ export default function YardageTable() {
                         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                           {club.yardage}
                         </span>
+                      </td>
+                      <td className="flex whitespace-nowrap py-4 pl-3 pr-4 text-sm font-medium sm:pr-6 md:pr-0">
+                        {/* eslint-disable-next-line */}
+                        <a
+                          className="text-red-600 hover:text-red-900"
+                          onClick={() => {
+                            handleDelete(club.club);
+                          }}
+                        >
+                          Delete
+                        </a>
                       </td>
                     </tr>
                   ))}

@@ -62,6 +62,7 @@ export default function YardageForm() {
       window.location.reload(); // to refactor so that notification reloads
     }
   };
+
   return (
     <>
       {/* Button that renders modal to add club */}
