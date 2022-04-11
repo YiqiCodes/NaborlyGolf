@@ -59,7 +59,7 @@ export default function YardageForm() {
       });
       openNotificationWithIconSubmit("success");
       setOpen(!open);
-      window.location.reload();
+      window.location.reload(); // to refactor so that notification reloads
     }
   };
   return (
