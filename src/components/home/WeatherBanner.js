@@ -51,8 +51,11 @@ const WeatherBanner = () => {
     <S.WeatherBanner>
       <dl className="mt-5">
         {stats.map((item) => (
-          <div key={item.id} className="relative overflow-hidden">
-            <div className="absolute bg-white-700 p-3">
+          <div
+            key={item.id}
+            className="flex items-center relative overflow-hidden sm:mb-3 md:mb-6"
+          >
+            <div className="absolute bg-white-700">
               <item.icon
                 className="h-4 w-4 md:h-4 md:w-4 lg:w-6 lg:h-6 text-white"
                 aria-hidden="true"
@@ -60,9 +63,9 @@ const WeatherBanner = () => {
               {item.name}
             </div>
             <div className="flex items-baseline sm:ml-8 md:ml-12">
-              <p className="text-2xl font-semibold text-white sm:text-sm md:text-2xl">
+              <div className="text-2xl font-semibold text-white sm:text-sm md:text-2xl">
                 {item.stat}
-              </p>
+              </div>
             </div>
           </div>
         ))}

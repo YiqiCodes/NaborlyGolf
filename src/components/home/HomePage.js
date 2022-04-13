@@ -36,7 +36,7 @@ export default function HomePage() {
           instructional videos to help improve your game. Built with React, Node.js, Express.js, MongoDB, antd, auth0, axios, react-player, recoil.js, styled-components, swr,
           tailwindCSS, CoinDesk API, Google Maps API & Weather API"
           >
-            <h2 className="text-6xl font-extrabold tracking-tight text-white">
+            <h2 className="mb-8  text-6xl font-extrabold tracking-tight text-white">
               NaborlyGolf
             </h2>
           </Tooltip>
