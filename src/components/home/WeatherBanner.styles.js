@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const WeatherBanner = styled.div`
-  width: 100%;
   position: absolute;
   z-index: 1;
   top: 0;
+  right: 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
