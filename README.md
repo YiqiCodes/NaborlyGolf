@@ -2,7 +2,7 @@
 
 Save your yardages, browse nearby courses, view products and watch instructional videos to help improve your game. More features coming soon.
 
-Built with React, antd, auth0, axios, react-player, recoil.js, styled-components, swr, tailwindCSS, CoinDesk API, Weather API & Google Maps API.
+Built with React, Node.js, Express.js, MongoDB, Mongoose, antd, auth0, axios, react-player, recoil.js, styled-components, swr, tailwindCSS, CoinDesk API, Weather API & Google Maps API.
 
 Deployed with AWS Amplify: https://naborlygolf.com
 
