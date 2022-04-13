@@ -2,7 +2,7 @@
 import { Tooltip } from "antd";
 
 // Assets
-import golfCoursePhoto from "../../assets/hole13.jpeg";
+import golfCoursePhoto from "../../assets/hole13.jpg";
 
 // Auth0
 import { useAuth0 } from "@auth0/auth0-react";
