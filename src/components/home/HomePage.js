@@ -2,7 +2,7 @@
 import { Tooltip } from "antd";
 
 // Assets
-import golfCoursePhoto from "../../assets/golfcourse.jpg";
+import golfCoursePhoto from "../../assets/hole13.jpeg";
 
 // Components
 import WeatherBanner from "./WeatherBanner";
@@ -24,17 +24,20 @@ export default function HomePage() {
         />
         <Tooltip
           placement="top"
-          title="Built with React, antd, auth0, axios, react-player, recoil.js, styled-components, swr,
+          title="Save your yardages, browse nearby courses, view products and watch
+          instructional videos to help improve your game. Built with React, antd, auth0, axios, react-player, recoil.js, styled-components, swr,
           tailwindCSS, CoinDesk API, Google Maps API & Weather API"
         >
           <div className="cursor-help relative max-w-3xl w-4/6 mx-auto flex flex-col items-center text-center">
             <h2 className="text-6xl font-extrabold tracking-tight text-white">
               NaborlyGolf
             </h2>
-            <p className="mt-5 text-2xl text-white">
-              Save your yardages, browse nearby courses, view products and watch
-              instructional videos to help improve your game.
-            </p>
+            <button
+              type="button"
+              className="w-full justify-center inline-flex items-center px-8 py-2 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+            >
+              Login
+            </button>
           </div>
         </Tooltip>
       </div>
