@@ -4,18 +4,15 @@ export const WeatherBanner = styled.div`
   width: 100%;
   position: absolute;
   z-index: 1;
-  bottom: 0;
+  top: 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   background: transparent;
-  padding: 2rem;
+  padding: 2rem 4rem 2rem 2rem;
 
   @media only screen and (max-width: 600px) {
-    padding: 8px;
-  }
-  @media only screen and (max-height: 400px) {
-    display: none;
+    padding-right: 2rem;
   }
   .ant-spin-dot-item {
     background-color: rgb(229 231 235);
