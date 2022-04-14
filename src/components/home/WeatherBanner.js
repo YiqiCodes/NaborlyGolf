@@ -27,13 +27,15 @@ const WeatherBanner = () => {
     {
       id: 1,
       stat: weather.current.condition.text,
-      icon: weather.current.condition.text.includes("loud")
-        ? WiCloudy
-        : weather.current.condition.text.includes("ain")
-        ? WiRain
-        : weather.current.condition.text.includes("now")
-        ? WiSnow
-        : WiDaySunny,
+      icon:
+        weather.current.condition.text.includes("loud") ||
+        weather.current.condition.text.includes("cast")
+          ? WiCloudy
+          : weather.current.condition.text.includes("ain")
+          ? WiRain
+          : weather.current.condition.text.includes("now")
+          ? WiSnow
+          : WiDaySunny,
     },
     {
       id: 2,
