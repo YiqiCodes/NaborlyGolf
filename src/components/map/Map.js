@@ -11,14 +11,14 @@ import userCoordinatesAtom from "../../recoil/UserCoordinatesAtom";
 import * as S from "./Map.styles";
 import "antd/dist/antd.css";
 
-const Map = () => {
+const Map = ({ courses }) => {
   const center = useRecoilValue(userCoordinatesAtom);
   const zoom = 11;
 
   return (
     <>
       <S.MapContainer>
-        <DefaultMap center={center} zoom={zoom} />
+        <DefaultMap center={center} courses={courses} zoom={zoom} />
       </S.MapContainer>
     </>
   );

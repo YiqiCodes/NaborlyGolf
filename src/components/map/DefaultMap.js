@@ -4,13 +4,7 @@ import GoogleMapReact from "google-map-react";
 // Components
 import Marker from "../marker/Marker";
 
-// Hooks
-// import useGetAllProperties from "../../hooks/UseGetAllProperties";
-
-// Vars
-import { dummyGolfCourses } from "../../vars/GolfCourses";
-
-const DefaultMap = ({ center, zoom }) => {
+const DefaultMap = ({ center, courses, zoom }) => {
   const getMapOptions = () => {
     return {
       disableDefaultUI: true,
@@ -44,7 +38,7 @@ const DefaultMap = ({ center, zoom }) => {
           lng={center.lng}
           property="My Home"
         />
-        {dummyGolfCourses.map((golfCourse, index) => {
+        {courses.map((golfCourse, index) => {
           return (
             <Marker
               key={index}
