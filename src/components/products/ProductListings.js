@@ -2,9 +2,9 @@
 import useGetBTCPrice from "../../hooks/GetWithSWR/UseGetBTCPrice";
 
 // Vars
-import { products } from "../../vars/GolfProducts";
+// import { products } from "../../vars/GolfProducts";
 
-export default function ProductListings() {
+export default function ProductListings({ products }) {
   const { btcPrice, isLoading, isError } = useGetBTCPrice();
 
   if (isLoading || isError) return null;
