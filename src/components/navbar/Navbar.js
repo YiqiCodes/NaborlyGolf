@@ -39,8 +39,8 @@ const Navbar = () => {
 
   const openNotificationWithIcon = (type) => {
     notification[type]({
-      message: "This is a premium feature.",
-      description: "Please login or register to access your stock yardages.",
+      message: "This feature is under construction",
+      description: "Thank you for your patience",
     });
   };
 
@@ -69,22 +69,22 @@ const Navbar = () => {
               </Menu.Item>
               {/* If logged in: display yardages component
                ** If not logged in: display notification */}
-              {user ? (
+              {/* {user ? (
                 <Menu.Item key="2" icon={<ChartBarIcon />}>
                   Yardages
                   <Link to="/yardages" />
                 </Menu.Item>
-              ) : (
-                <Menu.Item
-                  key="2"
-                  icon={<ChartBarIcon />}
-                  onClick={() => {
-                    openNotificationWithIcon("warning");
-                  }}
-                >
-                  Yardages
-                </Menu.Item>
-              )}
+              ) : ( */}
+              <Menu.Item
+                key="2"
+                icon={<ChartBarIcon />}
+                onClick={() => {
+                  openNotificationWithIcon("warning");
+                }}
+              >
+                Yardages
+              </Menu.Item>
+              {/* )} */}
               <Menu.Item key="3" icon={<FlagIcon />}>
                 Courses
                 <Link to="/map" />
