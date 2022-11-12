@@ -19,8 +19,8 @@ ReactDOM.render(
     <BrowserRouter>
       <RecoilRoot>
         <Auth0Provider
-          domain="dev-xlq9lv5t.us.auth0.com"
-          clientId="EqXkuTbNocKaxX66Ngi0vYhV3E5cnhfE"
+          domain={process.env.REACT_APP_AUTH_0_DOMAIN}
+          clientId={process.env.REACT_APP_AUTH_0_CLIENT_ID}
           redirectUri={process.env.REACT_APP_CLIENT_URL}
         >
           <App />
