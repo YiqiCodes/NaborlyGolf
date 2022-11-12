@@ -4,9 +4,6 @@ import useGetTutorialVideos from "../../hooks/GetWithSWR/UseGetTutorialVideos";
 // Packages
 import ReactPlayer from "react-player";
 
-// // Vars
-// import { videos } from "../../vars/YoutubeVideos";
-
 export default function InstructionalVideos() {
   const { tutorialVideos, isLoading, isError } = useGetTutorialVideos();
 
@@ -29,7 +26,7 @@ export default function InstructionalVideos() {
           </p>
         </div>
         <div className="h-4/5 2xl:h-3/5 flex -right-3.5 relative overflow-y-scroll xl:overflow-hidden 2xl:overflow-y-scroll mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-          {tutorialVideos.map((post) => (
+          {tutorialVideos.videos.map((post) => (
             <div
               key={post.title}
               className="flex flex-col min-h-full lg:min-h-0 xl:min-h-0 2xl:min-h-0 mb-32 md:mb-8 lg:mb-8 xl:mb-8 2xl:mb-8 rounded-lg shadow-lg"

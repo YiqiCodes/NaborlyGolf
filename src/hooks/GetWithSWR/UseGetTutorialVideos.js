@@ -9,7 +9,7 @@ const useGetTutorialVideos = () => {
   );
 
   return {
-    tutorialVideos: data.videos,
+    tutorialVideos: data,
     isLoading: !error && !data,
     isError: error,
   };
