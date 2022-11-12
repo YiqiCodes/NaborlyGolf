@@ -34,7 +34,7 @@ export default function HomePage() {
             placement="top"
             title="Save your yardages, browse nearby courses, view products and watch
           instructional videos to help improve your game. Built with React, Node.js, Express.js, MongoDB, antd, auth0, axios, react-player, recoil.js, styled-components, swr,
-          tailwindCSS, CoinDesk API, Google Maps API & Weather API"
+          tailwindCSS, Leaflet, CoinDesk API, & Weather API"
           >
             <h2 className="mb-8  text-6xl font-extrabold tracking-tight text-white">
               NaborlyGolf

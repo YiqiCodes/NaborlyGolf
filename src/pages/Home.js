@@ -27,11 +27,12 @@ const Home = () => {
     // Fetches weather based on user coordinates
     // Stores coordinates and weather in atoms
     const success = (pos) => {
-      let crd = pos.coords;
-      setUserCoords({ lat: crd.latitude, lng: crd.longitude });
+      let crd = [pos.coords.latitude, pos.coords.longitude];
+
+      setUserCoords(crd);
       axios({
         method: "get",
-        url: `https://api.weatherapi.com/v1/current.json?key=${weatherAPIToken}&q=${crd.latitude},${crd.longitude}`,
+        url: `https://api.weatherapi.com/v1/current.json?key=${weatherAPIToken}&q=${crd[0]},${crd[1]}`,
       }).then((res) => {
         setWeather(res.data);
       });

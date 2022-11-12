@@ -1,3 +1,9 @@
+/* // DEPRECATED
+// DEPRECATED
+// DEPRECATED
+// DEPRECATED
+// DEPRECATED */
+
 /* import styled from "styled-components"; */
 
 /* export const MapMarker = styled.div` */
@@ -15,7 +21,7 @@
   transform: translate(-50%, -50%);
   &:hover {
     z-index: 1;
-  } */
+  } 
   .pin {
     width: 30px;
     height: 30px;
