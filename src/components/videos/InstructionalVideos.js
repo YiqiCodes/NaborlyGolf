@@ -1,9 +1,17 @@
+// Hooks
+import useGetTutorialVideos from "../../hooks/GetWithSWR/UseGetTutorialVideos";
+
 // Packages
 import ReactPlayer from "react-player";
 
-// Vars
-import { videos } from "../../vars/YoutubeVideos";
+// // Vars
+// import { videos } from "../../vars/YoutubeVideos";
+
 export default function InstructionalVideos() {
+  const { tutorialVideos, isLoading, isError } = useGetTutorialVideos();
+
+  if (isLoading || isError) return null;
+
   return (
     <div className="w-full flex relative mr-4 bg-gray-50 pt-8 pb-20 px-4 sm:px-6 lg:pt-8 xl:pt-8 2xl:pt-16 lg:pb-28 lg:px-8">
       <div className="absolute inset-0">
@@ -21,7 +29,7 @@ export default function InstructionalVideos() {
           </p>
         </div>
         <div className="h-4/5 2xl:h-3/5 flex -right-3.5 relative overflow-y-scroll xl:overflow-hidden 2xl:overflow-y-scroll mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-          {videos.map((post) => (
+          {tutorialVideos.map((post) => (
             <div
               key={post.title}
               className="flex flex-col min-h-full lg:min-h-0 xl:min-h-0 2xl:min-h-0 mb-32 md:mb-8 lg:mb-8 xl:mb-8 2xl:mb-8 rounded-lg shadow-lg"
