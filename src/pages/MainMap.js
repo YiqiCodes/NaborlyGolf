@@ -1,7 +1,7 @@
 import React from "react";
 
 // Components
-import Map from "../components/map/Map";
+import LeafletMap from "../components/map/LeafletMap";
 
 // Hooks
 import UseGetCourses from "../hooks/GetWithSWR/UseGetCourses";
@@ -11,7 +11,7 @@ const MainMap = () => {
 
   if (isLoading || isError) return null;
 
-  return <Map courses={courses.courses} />;
+  return <LeafletMap courses={courses.courses} />;
 };
 
 export default MainMap;
